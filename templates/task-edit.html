@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Message</title>
+</head>
+<body>
+<form method="post">
+    <input type="text" name="message_text" value="{{message.text}}">
+    <input type="submit" value="Edit">
+</form>
+    <h2>{{ message.text }}</h2>
+    <form action="/tasks">
+        <input type="submit" value="Back" />
+    </form>
+</body>
+</html>

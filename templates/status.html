@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status</title>
+</head>
+<body>
+        <form method="post">
+            <h2>Is this task finished: {{ message.text }}?</h2>
+            <input type="submit" value="Yes">
+         </form>
+        <form action="/tasks">
+            <input type="submit" value="No" />
+        </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Task</title>
+</head>
+<body>
+    <h2>{{ task.text }}</h2>
+     <span> Finished:
+                    {% if task.status == False %}
+                    <img src="/assets/x.png" class="img"><br>
+                    {% elif task.status == True %}
+                    <img src="/assets/tick.png" class="img"><br>
+                    {% endif %}
+                </span>
+    <form action="/tasks">
+        <input type="submit" value="Back" />
+    </form>
+</body>
+</html>

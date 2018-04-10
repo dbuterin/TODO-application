@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ToDoApplication</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <p>Create new Task:</p>
+    <form method="post">
+        <input type="text" name="input_text">
+        <input type="submit" value="Save">
+    </form>
+     <form action="/">
+        <input type="submit" value="Back" />
+    </form>
+     <h4>Your tasks are:</h4>
+     <ul>
+        {% for message in tasks %}
+            <li>
+                <span>
+                    {{ message.text }}<br>
+                </span>
+                <span> Finished:
+                    {% if message.status == False %}
+                    <img src="/assets/x.png" class="img"><br>
+                    {% elif message.status == True %}
+                    <img src="/assets/tick.png" class="img"><br>
+                    {% endif %}
+                </span>
+                <form action="/task/{{ message.key.id() }}">
+                    <input type="submit" value="View task" />
+                </form>
+                <form action="/task/edit/{{ message.key.id() }}">
+                    <input type="submit" value="Edit task" />
+                </form>
+                <form action="/task/delete/{{ message.key.id() }}">
+                    <input type="submit" value="Delete task" />
+                </form>
+                <form action="/task/status/{{ message.key.id() }}">
+                    <input type="submit" value="Change status" />
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
